@@ -1,0 +1,10 @@
+INSERT INTO tbl_transaction VALUES (1,'2022-01-01 10:00:00',1,1,1,60,0);
+INSERT INTO tbl_transaction VALUES (2,'2022-01-10 11:00:00',2,2,1,80,0);
+INSERT INTO tbl_transaction VALUES (3,'2022-02-01 12:00:00',3,3,1,40,0);
+INSERT INTO tbl_transaction VALUES (4,'2022-02-10 14:00:00',2,4,2,40,0);
+INSERT INTO tbl_transaction VALUES (5,'2022-02-15 13:00:00',1,1,2,120,0);
+INSERT INTO tbl_transaction VALUES (6,'2022-02-20 15:00:00',2,3,3,60,0);
+INSERT INTO tbl_transaction VALUES (7,'2022-03-10 16:00:00',3,2,2,160,0);
+INSERT INTO tbl_transaction VALUES (8,'2022-03-15 10:00:00',1,1,1,60,0);
+INSERT INTO tbl_transaction VALUES (9,'2022-03-20 10:00:00',3,2,1,80,0);
+INSERT INTO tbl_transaction VALUES (10,'2022-03-25 10:00:00',2,2,1,80,0);
