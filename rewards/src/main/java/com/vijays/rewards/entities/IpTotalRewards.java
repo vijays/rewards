@@ -4,4 +4,5 @@ package com.vijays.rewards.entities;
 
 public interface IpTotalRewards {
 	int getreward_points_total() ;
+	void setreward_points_total(int trp) ;
 }
