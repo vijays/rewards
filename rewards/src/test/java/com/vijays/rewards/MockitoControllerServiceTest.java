@@ -15,7 +15,6 @@ import org.mockito.MockitoAnnotations;
 
 import com.vijays.rewards.controllers.AppController;
 import com.vijays.rewards.entities.IpTotalRewards;
-import com.vijays.rewards.repositories.ITransactionRepo;
 import com.vijays.rewards.services.RewardsService;
 
 public class MockitoControllerServiceTest {
@@ -28,10 +27,6 @@ public class MockitoControllerServiceTest {
 	@Mock
 	private RewardsService rewardsService ;
 	
-	@Mock
-	private ITransactionRepo transactionRepo ;
-	
-
 	// Initializing before test run
 	@BeforeEach
     public void init() {
@@ -41,16 +36,16 @@ public class MockitoControllerServiceTest {
     @Test
     public void testControllerAndService() {
 
-    	// Create object of interface returned
+    	// Create object of interface projection
     	IpTotalRewards trp = new IpTotalRewardsImpTest() ;
     	
     	// Add data to object
     	trp.setreward_points_total(100);
   
-    	// Create list of interface
+    	// Create list of interface projection
     	List<IpTotalRewards> trpList = new ArrayList<>() ;
     	
-    	// Add object with data
+    	// Add object with data to the list
     	trpList.add(trp) ;
     	
     	// When service is called return above mock data
