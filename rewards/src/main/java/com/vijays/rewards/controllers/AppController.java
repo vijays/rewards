@@ -11,4 +11,14 @@ public class AppController {
 		return "Reward points calculation app" ;
 	}
 
+	@GetMapping("/customer/{d}")
+	public String MonthlyRewardsByCustomerId() {
+		return "" ;
+	}
+
+	@GetMapping("customer/{id}/total")
+	public String TotalRewardsByCustomerId() {
+		return "" ;
+	}
+
 }
