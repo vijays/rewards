@@ -184,28 +184,24 @@ Configure the IDE to point towards it
 
 Initialize Spring as per:
 
-![](Pictures/1000000100000556000003009D0328968F79F6A6.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190193256-39a65442-d2ff-4792-9bcd-b8464120a9ba.png)
 
 Generate and extract the application zip file.
 
 Import it as Existing Maven Project in STS
 
-![](Pictures/10000001000005560000030008BC3F27E40B5F91.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190193429-122b154c-3767-451e-8c1c-40e2273b46a3.png)
 
 Create empty project repository in GitHub
 
 Clone the empty git repo in STS
 
-![](Pictures/100000010000055600000300BE8D7A41B9077943.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190194028-12e59beb-b282-4269-9df9-ce59d5f28e8f.png)
 
 Link downloaded initialized project with empty git repo using Team Share
 option in STS
 
-![](Pictures/100000010000055600000300136C91728BB031CB.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190194156-bdb6f616-385c-4beb-b323-74393a1ac74a.png)
 
 Configure H2 in memory database modifying application.properties.
 
@@ -247,14 +243,12 @@ We can have access to H2 database console at the location:
 
 localhost:8080/h2-console
 
-![](Pictures/100000010000055600000300A3B75AF0A6D1C311.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190194503-2667da23-fade-4119-8dc9-ada3213b0276.png)
 
 We can test the connection and connect to the database, upon which we
 get access to the schema and can run operations on it.
 
-![](Pictures/100000010000055600000300A228D550C8483D32.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190194670-60c44e64-ad70-4b28-8f88-026d65f78126.png)
 
 Above we see transaction table has been populated via data.sql and then
 app has calculated reward points and saved for each transaction.
@@ -263,25 +257,21 @@ app has calculated reward points and saved for each transaction.
 
 Home Page:
 
-![](Pictures/10000001000005560000030098D018AE73F81572.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190194815-582a5c7d-3de4-4ad1-b90a-bea2a9f59818.png)
 
 Month wise reward points for customer id = 1
 
-![](Pictures/100000010000055600000300AF3265869A85280B.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195009-b43ff90c-bb24-41e5-aa89-9999bc094ef0.png)
 
 ### 6.3 Using Postman
 
 Month wise reward points for customer id = 2
 
-![](Pictures/1000000100000556000003008AD7C0A1BFE8D740.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195092-b46e71bf-c4cc-4c87-8d9d-245d9dfc0de9.png)
 
 Total reward points for customer id = 2
 
-![](Pictures/10000001000005560000030009108B106949E6F6.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195165-ab31b67c-be28-4c66-8b0b-e7ca4ddb610c.png)
 
 ### 6.4 Using JUnit
 
@@ -293,15 +283,14 @@ and within our package name.
 
 We right click the test program and select JUnit to run it.
 
-![](Pictures/100000010000055600000300C2C27B456D2BDA27.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195224-e2837b08-faf5-42c2-9194-080694d52e0c.png)
 
 #### 6.4.1 Smoke Test
 
 Test if AppController is loaded and instantiated properly.
 
-![](Pictures/1000000100000556000003004220E9F0D9AF8391.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195284-a7af8776-abe2-41b2-8ccb-8b211a2b2857.png)
+
 
 The test is run and shows results in the JUnit view as show above -- Run
 1, Success tick with no Errors.
@@ -310,8 +299,7 @@ The test is run and shows results in the JUnit view as show above -- Run
 
 Test REST GetMapping in Controller and the Response
 
-![](Pictures/100000010000055600000300FF224627A132924B.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195341-6a46b171-f2df-42c0-9742-3a88d21267ca.png)
 
 ### 6.5 Using Mockito
 
@@ -321,8 +309,7 @@ Test Controller call to Service and Response using Mock data. We create
 mock data for total reward points we get when controller makes a service
 call. We later assert if controller receives the data correctly.
 
-![](Pictures/100000010000055600000300FBE8DACEB02BC006.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195444-3af59e80-f5f6-4225-90a3-6d6f0c5c0c37.png)
 
 ## 7. Building the application
 
@@ -340,8 +327,7 @@ Test run by command:
 
 java -jar \[applicationName\].jar
 
-![](Pictures/100000010000055600000300EF81D2BD1C97A568.png){width="17cm"
-height="9.557cm"}
+![image](https://user-images.githubusercontent.com/19529430/190195541-ef3f61e1-b6f7-406b-aadb-31657bbdad16.png)
 
 ## 8. Dockerizing
 
@@ -361,7 +347,7 @@ Dockerfile
 
 To build docker image:
 
-docker build -t vsdh/rewards .
+docker build -t vsdh/rewards 
 
 To run the image as a container:
 
