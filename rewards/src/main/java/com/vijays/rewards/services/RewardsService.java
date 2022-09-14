@@ -9,6 +9,8 @@ import com.vijays.rewards.repositories.ITransactionRepo;
 import com.vijays.rewards.entities.IpMonthlyRewards;
 import com.vijays.rewards.entities.IpTotalRewards;
 
+// Services to return data to API calls
+
 @Service
 public class RewardsService implements IRewardsService {
 

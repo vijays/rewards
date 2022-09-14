@@ -12,6 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.vijays.rewards.entities.Transaction;
 import com.vijays.rewards.repositories.ITransactionRepo;
 
+// Calculate reward points for each transaction and save for use in API calls
+
 @SpringBootApplication
 public class RewardsApplication implements ApplicationRunner {
 

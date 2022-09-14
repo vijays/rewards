@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+// Entity mapping tbl_transaction
+
 @Entity
 @Table(name="tbl_transaction")
 public class Transaction {
@@ -29,9 +31,10 @@ public class Transaction {
 	
 	public Transaction() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+	// Constructor
+	
 	public Transaction(int id_transaction, Date date_transaction, int id_customer, int id_product,
 			int quantity_transaction, int amount_transaction, int reward_points_transaction) {
 		super();
@@ -44,6 +47,8 @@ public class Transaction {
 		this.reward_points_transaction = reward_points_transaction;
 	}
 
+	// Getter Setter methods
+	
 	public int getId_transaction() {
 		return id_transaction;
 	}

@@ -21,6 +21,8 @@ public class AppController {
 	@Autowired
 	RewardsService rewardsService;
 
+	// Endpoints mapping and calls
+	
 	@GetMapping("/")
 	public String Home() {
 		return "Reward points calculation app" ;
