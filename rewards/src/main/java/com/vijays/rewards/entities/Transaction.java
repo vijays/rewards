@@ -21,27 +21,27 @@ public class Transaction {
 	@Column
 	private int id_product ;
 	@Column
-	private int nos_product ;
+	private int quantity_transaction ;
 	@Column
 	private int amount_transaction ;
 	@Column
-	private int reward_points ;
+	private int reward_points_transaction ;
 	
 	public Transaction() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Transaction(int id_transaction, Date date_transaction, int id_customer, int id_product, int nos_product,
-			int amount_transaction, int reward_points) {
+	public Transaction(int id_transaction, Date date_transaction, int id_customer, int id_product,
+			int quantity_transaction, int amount_transaction, int reward_points_transaction) {
 		super();
 		this.id_transaction = id_transaction;
 		this.date_transaction = date_transaction;
 		this.id_customer = id_customer;
 		this.id_product = id_product;
-		this.nos_product = nos_product;
+		this.quantity_transaction = quantity_transaction;
 		this.amount_transaction = amount_transaction;
-		this.reward_points = reward_points;
+		this.reward_points_transaction = reward_points_transaction;
 	}
 
 	public int getId_transaction() {
@@ -76,12 +76,12 @@ public class Transaction {
 		this.id_product = id_product;
 	}
 
-	public int getNos_product() {
-		return nos_product;
+	public int getQuantity_transaction() {
+		return quantity_transaction;
 	}
 
-	public void setNos_product(int nos_product) {
-		this.nos_product = nos_product;
+	public void setQuantity_transaction(int quantity_transaction) {
+		this.quantity_transaction = quantity_transaction;
 	}
 
 	public int getAmount_transaction() {
@@ -92,13 +92,14 @@ public class Transaction {
 		this.amount_transaction = amount_transaction;
 	}
 
-	public int getReward_points() {
-		return reward_points;
+	public int getReward_points_transaction() {
+		return reward_points_transaction;
 	}
 
-	public void setReward_points(int reward_points) {
-		this.reward_points = reward_points;
+	public void setReward_points_transaction(int reward_points_transaction) {
+		this.reward_points_transaction = reward_points_transaction;
 	}
 
-	
+
+
 }

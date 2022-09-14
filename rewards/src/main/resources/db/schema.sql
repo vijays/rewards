@@ -4,7 +4,7 @@ CREATE TABLE tbl_transaction (
   date_transaction TIMESTAMP,
   id_customer INT NOT NULL,
   id_product INT NOT NULL,
-  nos_Product INT, 
+  quantity_transaction INT, 
   amount_transaction INT,
-  reward_points INT
+  reward_points_transaction INT
  );

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vijays.rewards.repositories.ITransactionRepo;
+import com.vijays.rewards.entities.IpMonthlyRewards;
+import com.vijays.rewards.entities.IpTotalRewards;
 
 @Service
 public class RewardsService implements IRewardsService {
@@ -14,15 +16,13 @@ public class RewardsService implements IRewardsService {
 	ITransactionRepo transactionRepo ;	
 
 	@Override
-	public List<?> getMonthlyRewardsByCustomerId(int customerId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<IpMonthlyRewards> getMonthlyRewardsByCustomerId(int customerId) {
+		return transactionRepo.findMonthlyRewardsByCustomerId(customerId) ;
 	}
-
+	
 	@Override
-	public List<?> getTotalRewardsByCustomerId(int customerId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<IpTotalRewards> getTotalRewardsByCustomerId(int customerId) {
+		return transactionRepo.findTotalRewardsByCustomerId(customerId) ;
 	}
 
 }
