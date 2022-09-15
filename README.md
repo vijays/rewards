@@ -92,12 +92,12 @@ needed for quick tests.
 
 ### 4.1 Endpoints
 
-customer/{id}
+/customer/{customerId}
 
 This endpoint will show month wise reward points for a specified
 customer id.
 
-customer/{id}/total
+/customer/{customerId}/total
 
 This endpoint will show total reward points for a specified customer id.
 
