@@ -108,6 +108,7 @@ Returned data in JSON format.
 H2 database: shopdb schema will hold a table of transactions which we
 will define in schema.sql
 
+```sql
 DROP TABLE IF EXISTS tbl_transaction;
 
 CREATE TABLE tbl_transaction ( 
@@ -119,7 +120,7 @@ quantity_transaction INT,
 amount_transaction INT,  
 reward_points_transaction INT 
 );
-
+```
 
 id_customer is a foreign key to master tbl_customer
 
@@ -139,17 +140,18 @@ and our program calculates and populates immediately after it starts.
 As the requirement states that this transaction data is available in 3
 months set, we will insert a sample 3 months data via the data.sql.
 
-INSERT INTO tbl_transaction VALUES (1,\'2022-01-01 10:00:00\',1,1,1,60,0);  
-INSERT INTO tbl_transaction VALUES (2,\'2022-01-10 11:00:00\',2,2,1,80,0);  
-INSERT INTO tbl_transaction VALUES (3,\'2022-02-01 12:00:00\',3,3,1,40,0);  
-INSERT INTO tbl_transaction VALUES (4,\'2022-02-10 14:00:00\',2,4,2,40,0);  
-INSERT INTO tbl_transaction VALUES (5,\'2022-02-15 13:00:00\',1,1,2,120,0);  
-INSERT INTO tbl_transaction VALUES (6,\'2022-02-20 15:00:00\',2,3,3,60,0);  
-INSERT INTO tbl_transaction VALUES (7,\'2022-03-10 16:00:00\',3,2,2,160,0);  
-INSERT INTO tbl_transaction VALUES (8,\'2022-03-15 10:00:00\',1,1,1,60,0);  
-INSERT INTO tbl_transaction VALUES (9,\'2022-03-20 10:00:00\',3,2,1,80,0);  
-INSERT INTO tbl_transaction VALUES (10,\'2022-03-25 10:00:00\',2,2,1,80,0);  
-
+```sql
+INSERT INTO tbl_transaction VALUES (1,'2022-01-01 10:00:00',1,1,1,60,0);  
+INSERT INTO tbl_transaction VALUES (2,'2022-01-10 11:00:00',2,2,1,80,0);  
+INSERT INTO tbl_transaction VALUES (3,'2022-02-01 12:00:00',3,3,1,40,0);  
+INSERT INTO tbl_transaction VALUES (4,'2022-02-10 14:00:00',2,4,2,40,0);  
+INSERT INTO tbl_transaction VALUES (5,'2022-02-15 13:00:00',1,1,2,120,0);  
+INSERT INTO tbl_transaction VALUES (6,'2022-02-20 15:00:00',2,3,3,60,0);  
+INSERT INTO tbl_transaction VALUES (7,'2022-03-10 16:00:00',3,2,2,160,0);  
+INSERT INTO tbl_transaction VALUES (8,'2022-03-15 10:00:00',1,1,1,60,0);  
+INSERT INTO tbl_transaction VALUES (9,'2022-03-20 10:00:00',3,2,1,80,0);  
+INSERT INTO tbl_transaction VALUES (10,'2022-03-25 10:00:00',2,2,1,80,0);  
+```
 
 ### 4.3 Logic Flow
 
@@ -220,14 +222,18 @@ In Repository, implement Native SQL Queries:
 
 For monthly rewards by customer id:
 
+```sql
 SELECT SUM(t.reward_points_transaction) reward_points,
 MONTH(t.date_transaction) reward_month FROM tbl_transaction t WHERE
 t.id_customer = :customerId GROUP BY reward_month
+```
 
 For total rewards by customer id:
 
+```
 SELECT SUM(t.reward_points_transaction) reward_points_total FROM
 tbl_transaction AS t WHERE t.id_customer = :customerId
+```
 
 We need to capture the results of above query though it is not mapped to
 a database entity. Here we implement Interface projection to achieve
@@ -313,19 +319,23 @@ call. We later assert if controller receives the data correctly.
 
 ## 7. Building the application
 
-Edit pom.xml under build finalName and give the name of the app jar file
+Edit pom.xml under \<build\> \<finalName\> and give the name of the app jar file
 to execute
 
-\<build\>
+```xml
+<build>
 
-\<finalName\>rewards\</finalName\>
+  <finalName>rewards</finalName>
+```
 
 In IDE, perform Maven Install to generate the app jar file in the target
 folder
 
-Test run by command:
+Test run app by shell command:
 
-java -jar \[applicationName\].jar
+```sh
+java -jar rewards.jar
+```
 
 ![image](https://user-images.githubusercontent.com/19529430/190195541-ef3f61e1-b6f7-406b-aadb-31657bbdad16.png)
 
@@ -338,29 +348,41 @@ file is named as given only.
 
 Edit with following parameters:
 
+```xml
 FROM openJDK:8-jdk-alpine 
 COPY target/rewards.jar rewards.jar 
-ENTRYPOINT \[\"java\", \"-jar\", \"rewards.jar\"\]
+ENTRYPOINT ["java", "-jar", "rewards.jar"]
+```
 
 Open a terminal and go to the project root folder where we have the
 Dockerfile
 
 To build docker image:
 
+```
 docker build -t vsdh/rewards 
+```
 
 To run the image as a container:
 
-Docker run -p 9090:8080 vsdh/rewards
+```
+docker run -p 9090:8080 vsdh/rewards
+```
 
 We map port 9090 at our local machine, hence to access the application, we need to use the same:
 
+```
 localhost:9090
+```
 
 To push to docker hub:
 
+```
 docker push vsdh/rewards
+```
 
 To pull from docker hub:
 
+```
 docker pull vsdh/rewards
+```
