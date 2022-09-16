@@ -6,15 +6,15 @@ import com.vijays.rewards.entities.IpTotalRewards;
 
 public class IpTotalRewardsImpTest implements IpTotalRewards {
 
-	int trp ;
+	Integer trp ;
 	
 	@Override
-	public int getreward_points_total() {
+	public Integer getreward_points_total() {
  		return trp ;
 	}
 
 	@Override
-	public void setreward_points_total(int trp) {
+	public void setreward_points_total(Integer trp) {
 		this.trp = trp ;
 	}
 

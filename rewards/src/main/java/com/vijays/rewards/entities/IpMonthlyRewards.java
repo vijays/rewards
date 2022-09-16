@@ -4,6 +4,6 @@ package com.vijays.rewards.entities;
 
 public interface IpMonthlyRewards {
 
-	int getreward_month() ;
-	int getreward_points() ;
+	Integer getreward_month() ;
+	Integer getreward_points() ;
 }
