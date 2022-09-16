@@ -21,10 +21,9 @@ public class RewardsService implements IRewardsService {
 	public List<IpMonthlyRewards> getMonthlyRewardsByCustomerId(int customerId) {
 		return transactionRepo.findMonthlyRewardsByCustomerId(customerId) ;
 	}
-	
+
 	@Override
 	public List<IpTotalRewards> getTotalRewardsByCustomerId(int customerId) {
 		return transactionRepo.findTotalRewardsByCustomerId(customerId) ;
 	}
-
 }

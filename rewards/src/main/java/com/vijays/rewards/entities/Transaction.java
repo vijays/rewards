@@ -105,6 +105,4 @@ public class Transaction {
 		this.reward_points_transaction = reward_points_transaction;
 	}
 
-
-
 }
