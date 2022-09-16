@@ -151,6 +151,13 @@ For results of SQL queries run on the entity, we will define Interface Projectio
 
 viz. IpMonthlyRewards and IpTotalRewards
 
+### 4.4 Exception Handling
+
+We need to handle following types of exceptions:
+
+* Data not found
+* Bad API URL
+* Any other
 
 ## 5. Low Level Design
 
@@ -181,6 +188,8 @@ Clone the empty git repo in STS:
 Link downloaded initialized project with empty git repo using Team Share option in STS:
 
 ![image](https://user-images.githubusercontent.com/19529430/190194156-bdb6f616-385c-4beb-b323-74393a1ac74a.png)
+
+### 5.2 Coding
 
 Configure H2 in memory database modifying application.properties file.
 
@@ -214,6 +223,7 @@ WHERE t.id_customer = :customerId
 We need to capture the results of above query though it is not mapped to a database entity. Here we implement Interface projection to achieve
 that, viz. IpMonthlyRewards and IpTotalRewards.
 
+We will throw exceptions at AppController level. We will have all of handlers centrally in A Global Exception Handler. Bad API URLs will be caught by a custom error controller which will substitute default Spring and Tomcat handlers.
 
 ## 6. Testing
 
@@ -254,6 +264,18 @@ Month wise reward points for customer id = 2:
 Total reward points for customer id = 2:
 
 ![image](https://user-images.githubusercontent.com/19529430/190195165-ab31b67c-be28-4c66-8b0b-e7ca4ddb610c.png)
+
+Exception - Bad API URL:
+
+![image](https://user-images.githubusercontent.com/19529430/190635502-c8a8fd48-fcb8-408c-acdf-34e815e31290.png)
+
+Exception - Customer data not found for month wise rewards for a specific customer:
+
+![image](https://user-images.githubusercontent.com/19529430/190635695-d1a15261-543b-43ad-97d3-98cf128e6421.png)
+
+Exception - Customer data not found for total rewards for a specific customer:
+
+![image](https://user-images.githubusercontent.com/19529430/190635762-6efd1b06-ac4b-4508-b3b8-7b6259159b65.png)
 
 
 ### 6.4 Using JUnit
